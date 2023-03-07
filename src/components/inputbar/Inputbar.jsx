@@ -14,7 +14,6 @@ function Inputbar() {
             </InputSet>
             <Button>Add</Button>
         </InputBarDiv>
-        dddd
     )
 }
 
