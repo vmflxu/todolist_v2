@@ -1,13 +1,10 @@
-import Center from './Center';
-import GlobalStyle from './GlobalStyle';
-import './App.css'
+// import Center from './Center';
+import Router from './shared/Router';
+// import './App.css'
 
 function App() {
   return (
-    <>
-      <GlobalStyle />
-      <Center />
-    </>
+    <Router />
   );
 }
 
