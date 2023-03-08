@@ -166,11 +166,21 @@ export const CardTitle= styled.div`
     margin : 10px;
     font-size: 20px;
     font-weight: 400;
+    &:focus{
+        outline: none;
+    }
 `
 export const CardMemo = styled.div`
+    display: block;
     margin : auto 10px 10px 10px;
+    width : inherit;
+    background-color: transparent;
+    border : none;
     font-size : 14px;
     font-weight: 300;
+    &:focus{
+        outline: none;
+    }
 `
 
 // details page

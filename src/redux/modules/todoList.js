@@ -1,30 +1,30 @@
-const ADD_NEW = "ADD_NEW";
-const ERASE_CARD = "ERASE_CARD";
-const TOGGLE_IS_DONE = "TOGGLE_ISDONE";
-const GET_TODO_BY_ID = "GET_TODO_BY_ID";
+const ADD_NEW = "todolist/ADD_NEW";
+const ERASE_CARD = "todolist/ERASE_CARD";
+const TOGGLE_IS_DONE = "todolist/TOGGLE_ISDONE";
+const GET_TODO_BY_ID = "todolist/GET_TODO_BY_ID";
 
-export const addNew = (newElement) => {
+export const addNew = (payload) => {
     return {
         type: ADD_NEW,
-        payload : newElement
+        payload : payload
     }
 }
-export const eraseCard = (newElement) => {
+export const eraseCard = (payload) => {
     return {
         type: ERASE_CARD,
-        payload : newElement
+        payload : payload
     }
 }
-export const toggleIsDone = (newElement) => {
+export const toggleIsDone = (payload) => {
     return {
         type: TOGGLE_IS_DONE,
-        payload: newElement
+        payload: payload
     }
 }
-export const getTodoById = (id) => {
+export const getTodoById = (payload) => {
     return {
         type: GET_TODO_BY_ID,
-        payload: id,
+        payload: payload,
     }
 }
 
