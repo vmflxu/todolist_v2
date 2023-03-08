@@ -1,13 +1,8 @@
-import Center from './Center';
-import GlobalStyle from './GlobalStyle';
-import './App.css'
+import Router from './shared/Router';
 
 function App() {
   return (
-    <>
-      <GlobalStyle />
-      <Center />
-    </>
+    <Router />
   );
 }
 
