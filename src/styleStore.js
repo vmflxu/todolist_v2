@@ -23,8 +23,9 @@ export const Button = styled.button`
     cursor : pointer;
     display: block;
     padding: 0.4rem 12px;
-    height : auto;
+    height : 2.5rem;
     border-radius: 5px;
+    font-weight: bold;
     border: 1px solid lightslategray;
     background-color: lightslategray;
     color : white;
@@ -109,7 +110,7 @@ export const InputLabel = styled.label`
 export const TextInput = styled.input`
     border : none;
     margin : 0px;
-    height : 1.5rem;
+    height : 2rem;
     border-left: none;
     border-bottom-right-radius: inherit;
     width : ${(props) => props.length};
