@@ -1,16 +1,23 @@
 import React from 'react'
-import { BiArrowFromBottom, BiX, BiCheck } from "react-icons/bi";
+import { BiArrowFromBottom, BiX, BiCheck, BiDetail } from "react-icons/bi";
 import { useDispatch, useSelector } from 'react-redux';
-import { BtnForCard, BtnDetail } from '../../styleStore';
+import { BtnForCard, BtnDetail, BtnDiv } from '../../styleStore';
 import { eraseCard, toggleIsDone } from '../../redux/modules/todoList';
 import { useNavigate } from 'react-router-dom';
 
-function CardButtons({id,children}) {
+function CardButtons({ id, children }) {
 
     const icon = children ? <BiArrowFromBottom /> : <BiCheck />;
+    const DELETE = `
+        top : 0px;
+    `
+
+
     const dispatch = useDispatch();
     const data = useSelector((state) => state.todolist);
     const navigate = useNavigate();
+
+
 
     const deleteElement = () => {
         const tempArray = data.filter((element) => element.id !== id);
@@ -19,8 +26,8 @@ function CardButtons({id,children}) {
     }
 
     const toggleElement = () => {
-        const tempArray = data.map((element)=> {
-            if(element.id === id){
+        const tempArray = data.map((element) => {
+            if (element.id === id) {
                 element.isDone = !element.isDone;
                 return element;
             } else {
@@ -33,9 +40,14 @@ function CardButtons({id,children}) {
 
     return (
         <>
-            <BtnForCard isTop={true} onClick={deleteElement}><BiX /></BtnForCard>
-            <BtnForCard isTop={false} onClick={toggleElement}>{icon}</BtnForCard>
-            <BtnDetail onClick={() => navigate(`/details/${id}`)}>상세보기</BtnDetail>
+            <BtnDiv isTop={true}>
+                <BtnForCard isX={true} onClick={deleteElement}><BiX /></BtnForCard>
+            </BtnDiv>
+            <BtnDiv isTop={false}>
+                <BtnForCard isX={false} onClick={() => navigate(`/details/${id}`)}><BiDetail /></BtnForCard>
+                <BtnForCard isX={false} onClick={toggleElement}>{icon}</BtnForCard>
+            </BtnDiv>
+
         </>
     )
 }

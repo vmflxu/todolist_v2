@@ -10,18 +10,20 @@ function Inputbar() {
     const dispatch = useDispatch();
 
     const submit = () => {
-        const collectedData = {
-                id: Math.floor(Math.random()*100000000000), 
+        if (titleRef.current.value !== '' && memoRef.current.value !== '') {
+            const collectedData = {
+                id: Math.floor(Math.random() * 100000000000),
                 title: titleRef.current.value,
                 memo: memoRef.current.value,
                 isDone: false,
             };
 
-        const newData = [...data,collectedData];
+            const newData = [...data, collectedData];
 
-        dispatch(addNew(newData));
-        titleRef.current.value ='';
-        memoRef.current.value ='';
+            dispatch(addNew(newData));
+            titleRef.current.value = '';
+            memoRef.current.value = '';
+        } else;
     }
     return (
         <InputBarDiv>

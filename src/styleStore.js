@@ -10,6 +10,15 @@ export const Wrap = styled.div`
     margin : 0px auto;
     display : block;
 `
+export const HelpDiv = styled.div`
+    display: ${(props) => props.open? 'block' : 'none'};
+    position: fixed;
+    z-index: 3;
+    left:20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+`
 export const Button = styled.button`
     cursor : pointer;
     display: block;
@@ -24,35 +33,22 @@ export const Button = styled.button`
         background-color: darkslategray;
     }
 `
-export const BtnDetail = styled.button`
-    cursor : pointer;
-    font-size : small;
-    color: darkslategray;
-    background-color: transparent;
-    margin-bottom: 3px;
-    border : none;
-    &:hover{
-        color : black;
-    }
-`
-
 export const BtnForCard = styled.button`
     cursor : pointer;
-    font-size: 20px;
+    display : inline-block;
+    font-size: ${(props) => props.isX ? '20px':'14px'};
     color : grey;
-    position: absolute;
-    z-index: 5;
-    padding: 0px;
-    right: 2px;
-    top: ${(props)=> props.isTop ? '0px': ''};
-    bottom: ${(props)=> props.isTop ? '': '0px'};
+    height : fit-content;
+    width: fit-content;
+    padding : 0px;
+    margin : 0px 2px;
     background-color: transparent;
     border : none;
-    /* border-radius: 0%; */
     &:hover{
         color : red;
     }
 `
+
 
 // Header 
 export const HeaderDiv = styled.div`
@@ -126,6 +122,7 @@ export const TextInput = styled.input`
 export const ContentsDiv = styled.div`
     display: block;
     padding: 0px 10px;
+    margin-bottom: 50px;
 `
 
 export const PartTitle = styled.span`
@@ -162,25 +159,9 @@ export const Card = styled.div`
         box-shadow: 2px 2px 10px black;
     }
 `
-export const CardTitle= styled.div`
-    margin : 10px;
-    font-size: 20px;
-    font-weight: 400;
-    &:focus{
-        outline: none;
-    }
-`
-export const CardMemo = styled.div`
-    display: block;
-    margin : auto 10px 10px 10px;
-    width : inherit;
-    background-color: transparent;
-    border : none;
-    font-size : 14px;
-    font-weight: 300;
-    &:focus{
-        outline: none;
-    }
+export const CardDiv= styled.div`
+    min-width: 100%;
+    ${(props) => props.css}
 `
 
 // details page
@@ -219,4 +200,13 @@ export const TitleDiv = styled.div`
 export const MemoDiv = styled.div`
     display: block;
     width: 100%;
+`
+
+export const BtnDiv = styled.div`
+    position: absolute;
+    right: 0px;
+    ${(props) => props.isTop ? `top:0px;` : `bottom:0px;`}
+`
+export const Blank = styled.div`
+    height:20px;
 `
